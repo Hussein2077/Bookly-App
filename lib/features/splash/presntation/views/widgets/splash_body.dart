@@ -1,6 +1,11 @@
+import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/features/splash/presntation/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../../../../home/presntation/views/home_screen.dart';
 class SplashBody extends StatefulWidget  {
   const SplashBody({Key? key}) : super(key: key);
 
@@ -14,13 +19,11 @@ class _SplashBodyState extends State<SplashBody> with SingleTickerProviderStateM
 @override
   void initState() {
   super.initState();
-  animationController=AnimationController
-    (vsync: this,duration: const Duration(seconds: 1));
-  slidingAnimation=Tween<Offset>
-    (begin: const Offset(0,5),end: Offset.zero).animate(animationController);
-    animationController.forward();
-
+  initSlidingAnimation();
+  navigateToHomeScreen();
   }
+
+
   @override
   void dispose() {
     // TODO: implement dispose
@@ -39,5 +42,19 @@ class _SplashBodyState extends State<SplashBody> with SingleTickerProviderStateM
        SlidingText(slidingAnimation: slidingAnimation,),
       ],
     );
+  }
+
+  void initSlidingAnimation() {
+    animationController=AnimationController
+      (vsync: this,duration: const Duration(seconds: 1));
+    slidingAnimation=Tween<Offset>
+      (begin: const Offset(0,5),end: Offset.zero).animate(animationController);
+    animationController.forward();
+  }
+
+  void navigateToHomeScreen() {
+    Future.delayed(const Duration(seconds: 2),(){
+      Get.to(()=>const HomeScreen(),transition: Transition.fade,duration: kTranstionDuration);
+    });
   }
 }
