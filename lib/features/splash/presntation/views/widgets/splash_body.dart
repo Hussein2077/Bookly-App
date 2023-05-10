@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../../../../home/presntation/views/home_screen.dart';
+import '../../../../home/presentation/views/home_screen.dart';
+
 class SplashBody extends StatefulWidget  {
   const SplashBody({Key? key}) : super(key: key);
 
