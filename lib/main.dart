@@ -14,7 +14,7 @@ class BooklyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       routes: routes,
-initialRoute: AppRoutes.splashScreen,
+initialRoute: AppRoutes.bookDetails,
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor:kPrimaryColor,
