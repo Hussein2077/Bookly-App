@@ -7,7 +7,7 @@ class BestSellerListView extends StatelessWidget {
   Widget build(BuildContext context) {
     double h=MediaQuery.of(context).size.height;
 
-    return Container(
+    return SizedBox(
       height: h*.4,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18),

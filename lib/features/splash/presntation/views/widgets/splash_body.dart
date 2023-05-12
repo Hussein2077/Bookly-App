@@ -1,11 +1,8 @@
-import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/features/splash/presntation/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
-import '../../../../home/presentation/views/home_screen.dart';
+import '../../../../../core/utils/router.dart';
 
 class SplashBody extends StatefulWidget  {
   const SplashBody({Key? key}) : super(key: key);
@@ -30,7 +27,6 @@ class _SplashBodyState extends State<SplashBody> with SingleTickerProviderStateM
     // TODO: implement dispose
     super.dispose();
     animationController.dispose();
-    print('dispose');
   }
   @override
   Widget build(BuildContext context) {
@@ -55,7 +51,8 @@ class _SplashBodyState extends State<SplashBody> with SingleTickerProviderStateM
 
   void navigateToHomeScreen() {
     Future.delayed(const Duration(seconds: 2),(){
-      Get.to(()=>const HomeScreen(),transition: Transition.fade,duration: kTranstionDuration);
+    Navigator.pushNamed(context, AppRoutes.homeScreen);
+
     });
   }
 }
